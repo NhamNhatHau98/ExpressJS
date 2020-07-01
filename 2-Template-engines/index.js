@@ -65,5 +65,7 @@ app.use('/users/create', usersRoute)
 app.listen(port, () => console.log(`Server listening on port: ${port}`));
 
 
+app.use(express.static('public'))
+
 
 

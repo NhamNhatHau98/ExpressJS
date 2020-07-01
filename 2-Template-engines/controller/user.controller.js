@@ -6,7 +6,7 @@ const db = low(adapter);
 const shortid = require('shortid')
 
 module.exports.index = function (req, res) {
-    res.send('Index Page')
+    res.render('index')
 }
 
 module.exports.users = function(req, res){
@@ -32,7 +32,8 @@ module.exports.userCreatePost = function(req, res){
     db.get('users')
       .push(req.body)
       .write();
-    res.redirect('/users');
+    console.log(res.locals)
+    res.redirect('/users/index');
 }
 
 module.exports.getParams = function(req, res){
